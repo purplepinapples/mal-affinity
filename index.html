@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+				<title>MAL Affinity</title>
+				<link rel="stylesheet" href="./styles.css" type="text/css">
+					<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+					</head>
+					<body>
+						<div class="vertical-flex-container">
+							<div id="header">
+                MyAnimeList Affinity
+              </div>
+							<hr class="top-hr" />
+						<div id="description">
+							<div class="rounded-box">
+								<p>
+                  On 
+									<a href="https://myanimelist.net">MyAnimeList</a>, while viewing another user's profile, the sidebar displays your 
+									<span class="italic">affinity</span> with them:
+              
+								</p>
+								<div id="affinity-images">
+									<img src="./images/affinity-example-1.png" alt="Affinity Example 1" />
+									<img src="./images/affinity-example-2.png" alt="Affinity Example 2" />
+									<img src="./images/affinity-example-3.png" alt="Affinity Example 3" />
+								</div>
+								<p>
+                  Affinity can be positive or negative, and (supposedly) represents how similar your scores are, and by extension - your tastes.
+                </p>
+								<p>
+                  The affinity system has become a sort of gatekeeper, deciding whether or not two people on MAL should be friends, or whether one should trust recommendations from another person.
+                </p>
+								<p>
+                  If you're intersted in the math, The affinity calculation uses Pearson's correlation coefficient, you can read more at 
+									<a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Wikipedia</a> or the 
+									<a href="https://web.archive.org/web/20151029235943/http://myanimelist.net/forum/?topicid=5645">MAL thread that proposed a better affinity system</a>.
+								</p>
+							</div>
+						</div>
+						<div id="static-example">
+							<div class="rounded-box">
+								<h3>
+									<a href="#static-example" class="paperlink">&#128279;</a> What does 100% affinity look like?
+								</h3>
+								<p>
+                The difference between two users' scores is much more important than the scores itself. As an example, these two lists have maximum (+100%) affinity:
+                </p>
+								<div class="example-flexbox">
+									<div class="row">
+										<div></div>
+										<div>First User</div>
+										<div>Second User</div>
+										<div>Score Diff</div>
+									</div>
+									<div class="row">
+										<div>Show #1</div>
+										<div>10</div>
+										<div>8</div>
+										<div>(10 - 8) = +2</div>
+									</div>
+									<div class="row">
+										<div>Show #2</div>
+										<div>8</div>
+										<div>6</div>
+										<div>(8 - 6) = +2</div>
+									</div>
+									<div class="row">
+										<div>Show #3</div>
+										<div>7</div>
+										<div>5</div>
+										<div>(7 - 5) = +2</div>
+									</div>
+								</div>
+								<p>
+                The above example represents a few problems with affinity. 
+									<span class="bold">It doesn't require users' scores to be similar, only that the difference in scores be similar</span>.
+            
+								</p>
+								<p>
+                This 
+									<span class="italic">might</span> be useful, as it disregards a users scoring system; if someone rates all their shows around 7/10, and another rates their shows around 5/10, affinity will account for that.
+            
+								</p>
+								<p>
+                However, it also means that you can get false positives. As another extreme example, this is also 100% affinity:
+                </p>
+								<div class="example-flexbox">
+									<div class="row">
+										<div></div>
+										<div>First User</div>
+										<div>Second User</div>
+										<div>Score Diff</div>
+									</div>
+									<div class="row">
+										<div>Show #1</div>
+										<div>10</div>
+										<div>2</div>
+										<div>+8</div>
+									</div>
+									<div class="row">
+										<div>Show #2</div>
+										<div>10</div>
+										<div>2</div>
+										<div>+8</div>
+									</div>
+									<div class="row">
+										<div>Show #3</div>
+										<div>9</div>
+										<div>1</div>
+										<div>+8</div>
+									</div>
+								</div>
+								<p>
+                ... even if these users have completely opposite tastes.
+                </p>
+								<p>
+                  This is not to say affinity is a totally broken system - if two users have a similar rating system, affinity will be fairly accurate in representing how similar their (difference in) scores is.
+                </p>
+								<p>
+                  The table below represents two users' lists and their scores, try changing Lulu's scores to increase their affinity.
+                </p>
+							</div>
+						</div>
+						<div id="changable-example">
+							<div class="rounded-box">
+								<h3>
+									<a href="#changable-example" class="paperlink">&#128279;</a> Change Lulu's and Ginko scores to see how the affinity changes!
+								</h3>
+								<table>
+									<thead>
+                    <tr>                      
+										<th></th>
+										<th>
+                        Lulu's Score
+                    </th>
+										<th>
+                        Ginko's Score
+                    </th>
+										<th>
+                        Score Difference
+                    </th>
+                  </tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Yuri Kuma Arashi" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="10" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="10" />
+										</td>
+										<td class="answer">0</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Flip Flappers" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="9" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="8" />
+										</td>
+										<td class="answer">+1</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Kyousougiga" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="7" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="4" />
+										</td>
+										<td class="answer">+3</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Kanashimi no Belladonna" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="8" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="10" />
+										</td>
+										<td class="answer">-2</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Ashita no Joe" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="7" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="8" />
+										</td>
+										<td class="answer">-1</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="noborder" type="text" placeholder="anime name..." value="Revolutionary Girl Utena" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="8" />
+										</td>
+										<td>
+											<input type="number" min="1" max="10" placeholder="1-10" value="10" />
+										</td>
+										<td class="answer">-2</td>
+									</tr>
+								</tbody>
+							</table>
+							<div id="change-buttons">
+								<button id="add-row-button">&#65291; add another row</button>
+								<button id="randomize">&#x1f500; randomize scores</button>
+							</div>
+							<div id="affinity-calc">
+								<span id="affinity-calc-target" class="smallcaps">Affinity: +56.1%</span>
+							</div>
+						</div>
+            <div id="footer">
+              <p>Created by <a href="https://myanimelist.net/profile/purplepinapples">purplepinapples</a>. <a href="https://github.com/purplepinapples/mal-affinity">Source Code</a></p>
+            </div>
+					</div>
+        </div>
+				<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+				<script src="./index.js"></script>
+			</body>
+		</html>

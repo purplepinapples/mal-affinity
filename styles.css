@@ -1,0 +1,282 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: auto;
+  width: auto;
+  font-family: 'Titillium Web';
+  font-size: 1.1rem;
+  margin: 2rem 8rem 0rem 4rem;
+}
+
+hr.top-hr {
+    margin-right: 4rem;
+    border: 0;
+    height: 2px;
+    background: #333;
+}
+
+a:link, a:visited {
+    color: darkblue;
+}
+a:hover {
+    color: darkslateblue;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+p {
+  padding-top: 0.4rem;
+  margin: 0px;
+}
+
+button {
+  border: none;
+  font-size: 1em;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+table {
+  margin-top: 1rem;
+  width: 100%;
+  empty-cells: show;
+  border-collapse: collapse;
+  font-size: 1em;
+}
+
+table td {
+  min-width: 15%;
+  width: auto;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0px;
+  font-size: 1em;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: lightgrey;
+  text-align: center;
+  font-size: inherit;
+  min-width: 10em;
+  width: auto;
+}
+
+input[type="number"] {
+    min-width: 5rem;
+    width: 5rem;
+    padding: 0rem 1rem;
+}
+
+input.noborder {
+  border: none;
+}
+
+.paperlink {
+  text-decoration: none;
+}
+
+#vertical-flex-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#header {
+  font-size: 3em;
+}
+
+.rounded-box {
+  background-color: lightgrey;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+#footer {
+  margin-top: 1rem;
+  padding-bottom: 1.5rem;
+  background-color: darkgrey;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#affinity-images {
+  background-color: #eaeaea;
+  margin: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 632px;
+  width: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+#affinity-images img {
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  padding: 5px;
+}
+
+#affinity-images img:first-child {
+  padding-left: 0.4rem;
+}
+
+#affinity-images img:last-child {
+  padding-right: 0.4rem;
+}
+  
+#description button {
+  color: white;
+  background: #333;
+}
+
+.example-flexbox {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 80%;
+  width: auto;
+  padding: 2rem 4rem;
+}
+
+.example-flexbox .row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.example-flexbox .row div {
+  width: 7rem;
+}
+
+#math {
+  display: none;
+  background-color: #adadad;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  max-width: 90%;
+  width: auto;
+}
+
+#math.flex {
+  max-width: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+#math p, #math img {
+  padding: 0.4rem;
+}
+
+#math img {
+  max-width: inherit;
+  max-height: inherit;
+  width: 95%; /* keep dimensions when stretching */
+  height: auto;
+  padding: 0.4rem 0.6rem;
+}
+
+#changable-example h3 {
+  margin: 0.75rem;
+}
+
+#change-buttons {
+  text-align: center;
+  margin: 0.5rem;
+}
+
+#change-buttons button {
+  margin: 0px;
+  font-variant: small-caps;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+#affinity-calc {
+  font-size: 2em;
+  margin: 1rem 2rem;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.smallcaps {
+  font-variant: small-caps;
+}
+
+#affinity-calc-target.err {
+  color: red;
+  font-size: 70%;
+}
+
+#footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 650px) {
+  hr {
+    margin-right: 0.5rem;
+  }
+  body {
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+  #header {
+    font-size: 1.5rem;
+  }
+  input {
+    font-size: 70%;
+    min-width: 7em;
+  }
+  input[type="number"] {
+    min-width: 5rem;
+    width: 5rem;
+    padding: 0rem 0.75rem;
+  }
+  table td {
+    min-width: 5%;
+  }
+  .example-flexbox {
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 800px) {
+  hr {
+    margin-right: 2rem;
+  }
+  body {
+    margin-left: 2rem;
+    margin-right: 4rem;
+  }
+  #header {
+    font-size: 2em;
+  }
+  .example-flexbox {
+    padding-left: 2rem;
+  }
+}
