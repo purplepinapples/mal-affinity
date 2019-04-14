@@ -144,7 +144,13 @@ input.noborder {
 #affinity-images img:last-child {
   padding-right: 0.4rem;
 }
-  
+
+@media only screen and (max-width: 600px) {
+  #affinity-images {
+    flex-flow: column nowrap;
+  }
+}
+
 #description button {
   color: white;
   background: #333;
